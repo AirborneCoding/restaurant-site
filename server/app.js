@@ -74,10 +74,10 @@ const start = async () => {
         );
 
         // Syncing the database (development only - avoid using force: true in production)
-        // if (process.env.NODE_ENV === 'development') {
-        //     await sequelize.sync({ force: true });
-        //     console.log('Database synced!');
-        // }
+        if (process.env.NODE_ENV === 'development') {
+            await sequelize.sync({ force: true });
+            console.log('Database synced!');
+        }
     } catch (error) {
         console.error('Unable to connect to the database:', error);
     }
