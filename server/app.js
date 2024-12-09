@@ -39,11 +39,22 @@ app.set('trust proxy', 1);
 // );
 app.use(helmet());
 // app.use(cors());
-app.use(cors({
+const corsConfig = {
     // origin: ['http://localhost:3000', 'http://localhost:3001'], // Your frontend origin
-    origin: true,
+    // origin: true,
+    origin: "*",
     credentials: true, // Allows cookies to be sent
-}));
+    methods: [
+        "GET",
+        "POST",
+        "PUT",
+        "PATCH",
+        "DELETE",
+        "OPTIONS"
+    ]
+}
+app.options("", cors(corsConfig))
+app.use(cors(corsConfig));
 
 app.use(xss());
 
@@ -74,10 +85,10 @@ const start = async () => {
         );
 
         // Syncing the database (development only - avoid using force: true in production)
-        if (process.env.NODE_ENV === 'development') {
-            await sequelize.sync({ force: true });
-            console.log('Database synced!');
-        }
+        // if (process.env.NODE_ENV === 'development') {
+        //     await sequelize.sync({ force: true });
+        //     console.log('Database synced!');
+        // }
     } catch (error) {
         console.error('Unable to connect to the database:', error);
     }
