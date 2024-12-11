@@ -2,10 +2,13 @@ import axios from "axios";
 import { jwtDecode } from "jwt-decode";
 
 const axiosInstance = axios.create({
-    baseURL: "http://localhost:5000/api/v1", // Replace with your backend URL
+    // baseURL: "http://localhost:5000/api/v1",
+    // baseURL: process.env.SERVER_URL,
+    baseURL: 'https://restaurant-panda-server.onrender.com/api/v1',
     withCredentials: true, // Send cookies with requests
     headers: {
         "Content-Type": "application/json",
+        // Accept: "application/json",
     },
 });
 

@@ -1,4 +1,4 @@
-'use client'
+
 import AboutSection from "@/components/home/AboutSection ";
 import FeaturedDishes from "@/components/home/FeaturedDishes";
 import HeroSection from "@/components/home/HeroSection";
@@ -12,6 +12,8 @@ import { useSelector } from "react-redux";
 const page = () => {
   // const jsonString = JSON.stringify(GPTmenu);
   // console.log(jsonString);
+
+
   return (
     <>
       <main>

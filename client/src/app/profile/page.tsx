@@ -1,6 +1,6 @@
 import Info from "@/components/profile/Info";
-import { showMe } from "@/utils/apis/clients.api";
-import { getAllOrders } from "@/utils/apis/orders.api";
+import { showMe } from "@/utils/Apis/clients.api";
+import { getAllOrders } from "@/utils/Apis/orders.api";
 import { dehydrate, HydrationBoundary, QueryClient } from "@tanstack/react-query";
 export default async function Page() {
 

@@ -165,7 +165,7 @@
 //! 
 "use client";
 
-import { getAllOrders, deleteOrder } from "@/utils/apis/orders.api"; // Import deleteOrder
+import { getAllOrders, deleteOrder } from "@/utils/Apis/orders.api"; // Import deleteOrder
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import React, { useState } from "react";
 import OrderDetailsModal from "./OrderDetailsModal";

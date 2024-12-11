@@ -1,5 +1,4 @@
 import React, { createContext, useContext, useReducer, useState, ReactNode } from "react";
-import { toast } from "react-toastify";
 
 // Define types
 interface CartItem {
@@ -53,7 +52,6 @@ function cartReducer(state: CartState, action: CartAction): CartState {
                 numItemsInCart: state.numItemsInCart + menuItem.amount,
                 cartTotal: state.cartTotal + menuItem.price * menuItem.amount,
             };
-            toast.success("Item added to cart");
             return { ...updatedState, orderTotal: updatedState.cartTotal + updatedState.shipping };
         }
 
@@ -69,7 +67,6 @@ function cartReducer(state: CartState, action: CartAction): CartState {
                 numItemsInCart: state.numItemsInCart - item.amount,
                 cartTotal: state.cartTotal - item.price * item.amount,
             };
-            toast.error("Item removed from cart");
             return { ...updatedState, orderTotal: updatedState.cartTotal + updatedState.shipping };
         }
 
@@ -84,7 +81,6 @@ function cartReducer(state: CartState, action: CartAction): CartState {
                 cartTotal: state.cartTotal + item.price * (amount - item.amount),
             };
             item.amount = amount;
-            toast.success("Cart updated");
             return { ...updatedState, orderTotal: updatedState.cartTotal + updatedState.shipping };
         }
 
