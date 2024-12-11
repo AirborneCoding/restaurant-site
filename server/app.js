@@ -41,8 +41,8 @@ app.use(helmet());
 // app.use(cors());
 const corsConfig = {
     // origin: ['http://localhost:3000'], // Your frontend origin
-    origin: true,
-    // origin: "*",
+    // origin: true,
+    origin: "*",
     credentials: true, // Allows cookies to be sent
     methods: [
         "GET",
