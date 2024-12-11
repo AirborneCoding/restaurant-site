@@ -34,7 +34,7 @@ const attachCookiesToResponse = ({ res, user, refreshToken }) => {
 
   res.cookie('accessToken', accessTokenJWT, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production', // Enable secure in production
+    secure: true, // Enable secure in production
     signed: true,
     expires: new Date(Date.now() + oneDay),
     // sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax', 
@@ -44,7 +44,7 @@ const attachCookiesToResponse = ({ res, user, refreshToken }) => {
 
   res.cookie('refreshToken', refreshTokenJWT, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production', // Enable secure in production
+    secure: true, // Enable secure in production
     signed: true,
     expires: new Date(Date.now() + longerExp),
     // sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax', 

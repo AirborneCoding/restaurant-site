@@ -95,3 +95,5 @@ const start = async () => {
 };
 
 start();
+
+// this attempt to set a cookie via a Set-Cookie header was blocked because it had the "SameSite=None" attribute but did not have the "Secure" attribute, which is required in order to use "SameSite=None"
