@@ -103,7 +103,7 @@
 
 import React, { useContext, useState, useEffect, ReactNode } from 'react';
 import Cookies from 'js-cookie';
-import axiosInstance from '@/utils';
+import axiosInstance from '@/utils/index';
 
 interface User {
     userId: number;

@@ -1,4 +1,4 @@
-import axiosInstance from "..";
+import axiosInstance from "../index";
 
 export const showMe = async () => {
     try {

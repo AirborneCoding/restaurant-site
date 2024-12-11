@@ -1,4 +1,4 @@
-import axiosInstance from "..";
+import axiosInstance from "../index";
 
 // Register API call
 export const register = async (name: string, email: string, password: string) => {
