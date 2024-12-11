@@ -37,7 +37,8 @@ const attachCookiesToResponse = ({ res, user, refreshToken }) => {
     secure: process.env.NODE_ENV === 'production', // Enable secure in production
     signed: true,
     expires: new Date(Date.now() + oneDay),
-    sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax', // Use 'None' for production
+    // sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax', 
+    sameSite: 'None',
     maxAge: 24 * 60 * 60 * 1000,
   });
 
@@ -46,7 +47,8 @@ const attachCookiesToResponse = ({ res, user, refreshToken }) => {
     secure: process.env.NODE_ENV === 'production', // Enable secure in production
     signed: true,
     expires: new Date(Date.now() + longerExp),
-    sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax', // Use 'None' for production
+    // sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax', 
+    sameSite: 'None',
   });
 
 };
