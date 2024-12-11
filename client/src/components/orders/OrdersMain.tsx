@@ -7,8 +7,9 @@ import { useGlobalContext } from '@/context/AuthContext';
 import { useAppDispatch, useAppSelector } from '@/hooks/redux/redux-toolkit';
 import { setAddress, setClearAll, setConfi, setExtraInfo, setPhone } from '@/redux/slices/order';
 import { useMutation } from '@tanstack/react-query';
-import { createOrder } from '@/utils/Apis/orders.api';
+
 import Confetti from 'react-confetti';
+import { createOrder } from '@/actions/orders.api';
 
 const OrdersMain = () => {
     const dispatch = useAppDispatch();

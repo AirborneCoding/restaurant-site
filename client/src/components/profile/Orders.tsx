@@ -164,11 +164,10 @@
 
 //! 
 "use client";
-
-import { getAllOrders, deleteOrder } from "@/utils/Apis/orders.api"; // Import deleteOrder
 import { useQuery, useMutation, useQueryClient } from "@tanstack/react-query";
 import React, { useState } from "react";
 import OrderDetailsModal from "./OrderDetailsModal";
+import { getAllOrders ,deleteOrder } from "@/actions/orders.api";
 
 const statusStyles: { [key: string]: string } = {
     pending: "border-l-4 border-yellow-500",

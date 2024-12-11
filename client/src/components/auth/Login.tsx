@@ -1,11 +1,12 @@
 'use client'
 
 import React, { useState } from "react";
-import { login } from "@/utils/Apis/auth.apis";
+
 import { useMutation } from "@tanstack/react-query";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { useGlobalContext } from "@/context/AuthContext";
+import { login } from "@/actions/auth.apis";
 const Login = () => {
     const { saveUser } = useGlobalContext();
     const router = useRouter()

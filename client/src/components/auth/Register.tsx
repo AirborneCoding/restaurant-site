@@ -1,5 +1,6 @@
 'use client'
-import { register } from "@/utils/Apis/auth.apis";
+
+import { register } from "@/actions/auth.apis";
 import { useMutation } from "@tanstack/react-query";
 import Link from "next/link";
 import { useRouter } from "next/navigation";

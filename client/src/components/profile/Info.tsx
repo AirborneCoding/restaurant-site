@@ -5,7 +5,6 @@ import React, { useEffect } from "react";
 import LogoLoader from "../shared/LogoLoader";
 import Account from "./Account";
 import Orders from "./Orders";
-import { getAllOrders } from "@/utils/Apis/orders.api";
 const Info = () => {
 
 
