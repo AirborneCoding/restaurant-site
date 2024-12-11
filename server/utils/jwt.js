@@ -14,23 +14,44 @@ const attachCookiesToResponse = ({ res, user, refreshToken }) => {
   const oneDay = 1000 * 60 * 60 * 24;
   const longerExp = 1000 * 60 * 60 * 24 * 30;
 
+  // res.cookie('accessToken', accessTokenJWT, {
+  //   httpOnly: true,
+  //   secure: process.env.NODE_ENV === 'production',
+  //   signed: true,
+  //   expires: new Date(Date.now() + oneDay),
+  //   sameSite: 'lax',
+  //   maxAge: 24 * 60 * 60 * 1000,
+  // });
+
+  // res.cookie('refreshToken', refreshTokenJWT, {
+  //   httpOnly: true,
+  //   secure: process.env.NODE_ENV === 'production',
+  //   signed: true,
+  //   expires: new Date(Date.now() + longerExp),
+  //   sameSite: 'lax'
+  // });
+
+
   res.cookie('accessToken', accessTokenJWT, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
+    secure: process.env.NODE_ENV === 'production', // Enable secure in production
     signed: true,
     expires: new Date(Date.now() + oneDay),
-    sameSite: 'lax',
+    sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax', // Use 'None' for production
     maxAge: 24 * 60 * 60 * 1000,
   });
 
   res.cookie('refreshToken', refreshTokenJWT, {
     httpOnly: true,
-    secure: process.env.NODE_ENV === 'production',
+    secure: process.env.NODE_ENV === 'production', // Enable secure in production
     signed: true,
     expires: new Date(Date.now() + longerExp),
-    sameSite: 'lax'
+    sameSite: process.env.NODE_ENV === 'production' ? 'None' : 'Lax', // Use 'None' for production
   });
+
 };
+
+
 // const attachSingleCookieToResponse = ({ res, user }) => {
 //   const token = createJWT({ payload: user });
 
