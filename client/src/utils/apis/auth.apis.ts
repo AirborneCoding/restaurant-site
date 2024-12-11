@@ -26,11 +26,6 @@ export const login = async (email: string, password: string) => {
         return response.data;
     } catch (error: any) {
         console.log(error);
-
         throw new Error(error.response?.data?.msg || "An error occurred during login");
-
     }
 };
-
-
-

@@ -1,7 +1,7 @@
 'use client'
 
 import React, { useState } from "react";
-import { login } from "@/utils/Apis/auth.api";
+import { login } from "@/utils/Apis/auth.apis";
 import { useMutation } from "@tanstack/react-query";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
