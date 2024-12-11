@@ -1,4 +1,4 @@
-import axiosInstance from "../index";
+import axiosInstance from "../axiosInstance";
 
 export const getAllOrders = async () => {
     try {
